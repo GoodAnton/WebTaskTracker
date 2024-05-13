@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>Fragments</title>
+</head>
+<body>
+
+<div th:fragment="logout">  <!-- Создаем фрагмент, который можно будет подключить надругих страницах html-->
+    <form action="/logout" method="post">
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+        <button type="submit"> Logout </button>
+    </form>
+</div>
+
+<div th:fragment="create_project">
+        <form th:action="@{/projects}" method="post">
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+                    <label for="1">
+                <input id="1" type="text" name="name" placeholder="Project name"> </label>
+        <button type="submit"> Create project </button>
+    </form>
+</div>
+
+<div th:fragment="go_to_projects">
+    <form action="/projects" method="get">
+        <button type="submit"> My projects </button>
+    </form>
+</div>
+
+<div th:fragment="go_to_adminPanel">
+    <form action="/users" method="get">
+        <button type="submit"> Admin panel </button>
+    </form>
+</div>
+
+
+
+</body>
+</html>

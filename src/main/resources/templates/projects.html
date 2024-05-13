@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+
+<body>
+<h2>My projects</h2>
+
+<table>
+    <tr>
+        <th>Project Name</th>
+        <th>Created date</th>
+    </tr>
+    <tr th:each="project : ${projects}">
+        <td> <a th:href="@{'/projects/'+${project.getId()}}" th:text="${project.getName()}">Name как ссылка</a> </td>
+        <td th:text="${project.getCreatedDate()}">Date</td>
+    </tr>
+</table>
+</body>
+</html>

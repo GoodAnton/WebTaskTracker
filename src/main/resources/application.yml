@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/task_tracker
+    username: postgres
+    password: root
+    driver: PostgresDriver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+#logging:
+#  level:
+#    root: INFO
+#  file:
+#    name: logfile
+#    path:
+

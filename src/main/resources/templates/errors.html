@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>Errors</title>
+
+</head>
+<body>
+<h1> Errors </h1>
+
+<div th:if="${createProjectError}" >
+   <p style="color: red" th:each="error : ${createProjectError}" th:text="|Имя проекта - ${error.defaultMessage}|"> Error message </p>
+</div>
+
+</body>
+</html>
